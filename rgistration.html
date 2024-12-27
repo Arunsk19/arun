@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration</title>
+    <link rel="stylesheet" href="final.css">
+    <script>
+        function showOTPSection(event) {
+            event.preventDefault(); // Prevent default form submission
+            // Redirect to OTP page
+            window.location.href = "otp.html"; 
+        }
+    </script>
+</head>
+<body style="background-color: beige;">
+    <nav>
+        <ul>
+            <li><a href="home.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+
+    <div id="registration">
+        <center>
+            <h2 style="font-size: 35px;">Registration</h2>
+        </center>
+
+        <form onsubmit="showOTPSection(event);">
+            <br><br>
+            <label style="font-family:'Times New Roman';"><strong>First Name:</strong></label>
+            <input type="text" required><br><br>
+            <label style="font-family:'Times New Roman';"><strong>Last Name:</strong></label>
+            <input type="text" required><br><br>
+            <label style="font-family:'Times New Roman';"><strong>Date of birth:</strong></label>
+            <input type="date" required><br><br>
+            <label style="font-family:'Times New Roman';"><strong>Email:</strong></label>
+            <input type="email" required><br><br>
+            <label style="font-family:'Times New Roman';"><strong>Password:</strong></label>
+            <input type="password" required><br><br>
+            <label style="font-family:'Times New Roman';"><strong>Gender:</strong></label><br><br>
+            <label style="font-family:'Times New Roman';"><strong>Male</strong></label>
+            <input type="radio" name="gender" value="male" required><br><br>
+            <label style="font-family:'Times New Roman';"><strong>Female</strong></label>
+            <input type="radio" name="gender" value="female" required><br><br>
+            <center>
+                <input style="font-size: 35px;" type="submit" value="Submit">
+            </center>
+        </form>
+    </div>
+</body>
+</html>

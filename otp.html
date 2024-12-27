@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OTP Validation</title>
+    <link rel="stylesheet" href="final.css">
+    <script>
+        function sendOTP() {
+            var mobileNumber = document.getElementById("mobile-number").value;
+            if (mobileNumber) {
+                var otp = Math.floor(100000 + Math.random() * 900000);
+                alert("Your OTP is: " + otp); // Show OTP as a popup
+                sessionStorage.setItem("otp", otp); // Store the OTP in sessionStorage
+            } else {
+                alert("Please enter your mobile number.");
+            }
+        }
+
+        function validateOTP() {
+            var enteredOTP = document.getElementById("otp-input").value;
+            var generatedOTP = sessionStorage.getItem("otp");
+            if (enteredOTP == generatedOTP) {
+                alert("Registration successfully completed!");
+                // Redirect or perform additional actions after successful validation
+            } else {
+                alert("Invalid OTP. Please try again.");
+            }
+        }
+    </script>
+</head>
+<body style="background-color: beige;">
+    <nav>
+        <ul>
+            <li><a href="home.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+
+    <center>
+        <h2 style="font-size: 35px;">OTP VALIDATION</h2>
+    </center>
+    <form>
+        <br><br>
+        <label style="font-family:'Times New Roman';"><strong>Mobile Number:</strong></label>
+        <input type="text" id="mobile-number" required><br><br>
+        <button type="button" onclick="sendOTP()">Send OTP</button><br><br>
+        <label style="font-family:'Times New Roman';"><strong>Enter OTP:</strong></label>
+        <input type="text" id="otp-input" required><br><br>
+        <button type="button" onclick="validateOTP()">Validate OTP</button><br><br>
+    </form>
+</body>
+</html>

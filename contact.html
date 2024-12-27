@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us</title>
+    <link rel="stylesheet" href="final.css">
+    <script>
+        function sendMessage(event) {
+            event.preventDefault(); // Prevent default form submission
+            alert("Message sent!"); // Show pop-up message
+            // Here you could also add logic to handle form submission, like sending data to a server
+        }
+    </script>
+</head>
+<body style="background-color: beige;">
+    <nav>
+        <ul>
+            <li><a href="home.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+
+    <header style="text-align: center; padding: 50px;">
+        <h1>Contact Us</h1>
+        <p>We'd love to hear from you!</p>
+    </header>
+
+    <section style="padding: 20px;">
+        <form onsubmit="sendMessage(event);">
+            <label><strong>Name:</strong></label><br>
+            <input type="text" required><br><br>
+            <label><strong>Email:</strong></label><br>
+            <input type="email" required><br><br>
+            <label><strong>Message:</strong></label><br>
+            <textarea required></textarea><br><br>
+            <button type="submit">Send Message</button>
+        </form>
+    </section>
+
+    <footer style="text-align: center; padding: 20px;">
+        <p>&copy; 2024 Your Company Name. All rights reserved.</p>
+    </footer>
+</body>
+</html>
